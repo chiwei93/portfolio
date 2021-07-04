@@ -113,7 +113,6 @@ const enableScrollTrigger = container => {
     ScrollTrigger.create({
       trigger: item,
       start: 'top 110%',
-	  markers: true,
       onLeaveBack: () => anim.pause(0),
     });
   });
