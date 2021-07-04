@@ -1,0 +1,92 @@
+<%- include('./includes/head.ejs') %>
+	<title>Contact Me</title>
+</head>
+
+<body data-barba="wrapper">
+	<main data-barba="container" data-barba-namespace="contact">
+		<%- include('./includes/navigation.ejs') %>
+	
+		<div class="padding_container">
+			<section class="contact">
+				<form action="/contact" method="POST" class="contact_form">
+					<div class="form_email_error">
+						<% if (emailError) { %>
+							<div class="email_error_alert">
+								<%= emailError %>
+								<button class="alert_btn_close" type='button'>
+									<i class="fas fa-times"></i>
+								</button>
+							</div>
+						<% } %>
+					</div>
+	
+					<div class="form_control">
+						<div class="form_input_container <%= errors.find(err => err.param === 'name') ? 'error' : '' %>">
+							<input name="name" id="name" type="text" autocomplete="off" required>
+							<label for="name">Name</label>
+						</div>
+	
+						<% if (errors.find(err => err.param === 'name')) { %>
+							<p class="form_error">
+								<%= errors.find(err => err.param === 'name').msg %>
+							</p>
+						<% } %>
+					</div>
+	
+					<div class="form_control">
+						<div class="form_input_container <%= errors.find(err => err.param === 'email') ? 'error' : '' %>">
+							<input name="email" id="email" type="email" autocomplete="off" required>
+							<label for="email">Email</label>
+						</div>
+	
+						<% if (errors.find(err => err.param === 'email')) { %>
+							<p class="form_error">
+								<%= errors.find(err => err.param === 'email').msg %>
+							</p>
+						<% } %>
+					</div>
+	
+					<div class="form_control">
+						<div class="form_input_container <%= errors.find(err => err.param === 'message') ? 'error' : '' %>">
+							<textarea name="message" id="message" rows="6" required></textarea>
+							<label for="message">Message</label>
+						</div>
+	
+						<% if (errors.find(err => err.param === 'message')) { %>
+							<p class="form_error">
+								<%= errors.find(err => err.param === 'message').msg %>
+							</p>
+						<% } %>
+					</div>
+	
+					<button class="form_btn_submit">Send Message</button>
+				</form>
+	
+				<div class="contact_info_container">
+					<h1>Get in touch another way...</h1>
+	
+					<p>
+						You can also get in touch through the following means:
+					</p>
+	
+					<ul class="contact_list">
+						<li class="contact_item">
+							<i class="fab fa-facebook icon-facebook"></i>
+							<a href="https://www.facebook.com/leong.chiwei.3" class="contact_link" target="_blank">/Leong chi wei</a>
+						</li>
+	
+						<li class="contact_item">
+							<i class="fab fa-github"></i>
+							<a href="https://github.com/chiwei93?tab=repositories" class="contact_link" target="_blank">/chiwei93</a>
+						</li>
+	
+						<li class="contact_item">
+							<i class="fab fa-linkedin-in icon-linkedin"></i>
+							<a href="https://www.linkedin.com/in/chi-wei-leong-a73539216/" class="contact_link" target="_blank">/chi wei leong</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+	</main>
+<%- include('./includes/end.ejs') %>

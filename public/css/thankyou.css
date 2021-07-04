@@ -1,0 +1,197 @@
+.page_container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.thank_you {
+  flex: auto;
+  color: var(--color-white);
+}
+
+.thank_you_text_container {
+  margin: 5em 0;
+}
+
+.thank_you_text {
+  padding: 0 2em;
+}
+
+.thank_you_text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+.thank_you_text p {
+  font-size: 0.9rem;
+  color: var(--color-gray-text);
+  font-weight: 500;
+}
+
+.thank_you_btn_home {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  background-color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 2.5em;
+  transition: background-color 0.3s;
+}
+
+.thank_you_btn_home:hover,
+.thank_you_btn_home:active {
+  background-color: var(--color-pink);
+}
+
+@media only screen and (min-width: 700px) {
+  .upper_container,
+  .gray_upper_container {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 3.6rem;
+    z-index: -5;
+  }
+
+  .upper_container {
+    width: 21vw;
+    right: 0;
+    background-color: var(--color-primary);
+  }
+
+  .gray_upper_container {
+    width: 9vw;
+    right: 21vw;
+    background-color: var(--color-project-item-background);
+  }
+
+  .thank_you {
+    display: flex;
+  }
+
+  .thank_you_text_container {
+    flex: 0.7;
+    margin: 0;
+    align-self: center;
+  }
+
+  .thank_you_text {
+    padding-right: 0;
+    padding-left: 4em;
+  }
+
+  .thank_you_box_container {
+    flex: 0.3;
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+  }
+
+  .red_container {
+    background-color: var(--color-primary);
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+  }
+
+  .gray_container {
+    background-color: var(--color-project-item-background);
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .thank_you_text {
+    padding-left: 6em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .upper_container {
+    width: 32.5vw;
+  }
+
+  .gray_upper_container {
+    display: none;
+  }
+
+  .thank_you_text_container {
+    flex: 0.5;
+    display: grid;
+    grid-template-rows: 0.7fr 0.4fr;
+  }
+
+  .thank_you_text {
+    align-self: end;
+    padding-left: 6em;
+  }
+
+  .thank_you_text h1 {
+    font-size: 4rem;
+  }
+
+  .thank_you_text p,
+  .thank_you_btn_home {
+    font-size: 1rem;
+  }
+
+  .thank_you_box_container {
+    flex: 0.5;
+    display: grid;
+    grid-template-rows: 0.7fr 0.4fr;
+    grid-template-columns: 0.35fr 0.65fr;
+  }
+
+  .red_container {
+    background-color: var(--color-primary);
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .gray_container {
+    background-color: var(--color-project-item-background);
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .thank_you_text {
+    padding-left: 8em;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .thank_you_text {
+    padding-left: 15vw;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .thank_you_text {
+    padding-left: 20vw;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .upper_container {
+    top: 0;
+    right: 20vw;
+    width: 20.8vw;
+  }
+
+  .thank_you {
+    padding-right: 20vw;
+  }
+
+  .thank_you_text_container {
+    flex: 0.6;
+  }
+
+  .thank_you_box_container {
+    flex: 0.4;
+  }
+
+  .thank_you_text {
+    padding-left: 30vw;
+  }
+}

@@ -1,0 +1,27 @@
+<%- include('./includes/head.ejs') %>
+	<title>Page Not Found (404)</title>
+</head>
+
+<body data-barba="wrapper">
+	<div class="error_page_container" data-barba="container" data-barba-namespace="error">
+		<%- include('./includes/navigation.ejs') %>
+
+		<section class="error_section">
+			<div class="error_text_container">
+				<h1>Oh My...</h1>
+
+				<p>
+					The page that you're looking for does not exist.
+				</p>
+
+				<a href="/" class="error_btn_back">
+					Go Back
+				</a>
+			</div>
+
+			<div class="error_img_container">
+				<img src="/images/404.png" alt="404">
+			</div>
+		</section>
+	</div>
+<%- include('./includes/end.ejs') %>
