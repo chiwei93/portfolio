@@ -5,75 +5,116 @@ gsap.registerPlugin(ScrollTrigger);
 const enableScrollTrigger = container => {
   const watermark = container.querySelector('.skills p');
 
-  gsap.from(watermark, {
-    scrollTrigger: {
-      trigger: watermark,
-      start: 'top 90%',
-      toggleActions: 'play completed none reset',
-    },
+  const watermarkAnim = gsap.from(watermark, {
     yPercent: 100,
     autoAlpha: 0,
     duration: 0.5,
     clearProps: 'all',
+    paused: true,
+  });
+
+  ScrollTrigger.create({
+    trigger: watermark,
+    start: 'top 90%',
+    onEnter: () => watermarkAnim.restart(),
+  });
+
+  ScrollTrigger.create({
+    trigger: watermark,
+    start: 'top 130%',
+    onLeaveBack: () => watermarkAnim.pause(0),
   });
 
   const skillHeading = container.querySelector('.skills h2');
 
-  gsap.from(skillHeading, {
-    scrollTrigger: {
-      trigger: skillHeading,
-      start: 'top 65%',
-      toggleActions: 'play completed none reset',
-    },
+  const skillHeadingAnim = gsap.from(skillHeading, {
     yPercent: 100,
     autoAlpha: 0,
     duration: 1,
     clearProps: 'all',
+    paused: true,
+  });
+
+  ScrollTrigger.create({
+    trigger: skillHeading,
+    start: 'top 65%',
+    onEnter: () => skillHeadingAnim.restart(),
+  });
+
+  ScrollTrigger.create({
+    trigger: skillHeading,
+    start: 'top 120%',
+    onLeaveBack: () => skillHeadingAnim.pause(0),
   });
 
   const skillsItems = container.querySelectorAll('.skills_item');
 
   skillsItems.forEach(item => {
-    gsap.from(item, {
-      scrollTrigger: {
-        trigger: item,
-        start: 'top 75%',
-        toggleActions: 'play completed none reset',
-      },
+    const anim = gsap.from(item, {
       xPercent: -100,
       autoAlpha: 0,
       duration: 1,
       clearProps: 'all',
+      paused: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: item,
+      start: 'top 75%',
+      onEnter: () => anim.restart(),
+    });
+
+    ScrollTrigger.create({
+      trigger: item,
+      start: 'top 110%',
+      onLeaveBack: () => anim.pause(0),
     });
   });
 
   const projectsHeading = container.querySelector('#projects h2');
 
-  gsap.from(projectsHeading, {
-    scrollTrigger: {
-      trigger: projectsHeading,
-      start: 'top 60%',
-      toggleActions: 'play completed none reset',
-    },
+  const projectsHeadingAnim = gsap.from(projectsHeading, {
     yPercent: 100,
     autoAlpha: 0,
     duration: 1,
     clearProps: 'all',
+    paused: true,
+  });
+
+  ScrollTrigger.create({
+    trigger: projectsHeading,
+    start: 'top 60%',
+    onEnter: () => projectsHeadingAnim.restart(),
+  });
+
+  ScrollTrigger.create({
+    trigger: projectsHeading,
+    start: 'top 110%',
+    onLeaveBack: () => projectsHeadingAnim.pause(0),
   });
 
   const projectItems = container.querySelectorAll('.projects_item');
 
   projectItems.forEach(item => {
-    gsap.from(item, {
-      scrollTrigger: {
-        trigger: item,
-        start: 'top 65%',
-        toggleActions: 'play completed none reset',
-      },
+    const anim = gsap.from(item, {
       xPercent: -100,
       autoAlpha: 0,
       duration: 1,
       clearProps: 'all',
+      paused: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: item,
+      start: 'top 65%',
+      onEnter: () => anim.restart(),
+    });
+
+    ScrollTrigger.create({
+      trigger: item,
+      start: 'top 110%',
+	  markers: true,
+      onLeaveBack: () => anim.pause(0),
     });
   });
 };
@@ -392,7 +433,7 @@ barba.init({
       to: {
         namespace: ['contact'],
       },
-      async leave({current}) {
+      async leave({ current }) {
         await homeAnimationLeave(current.container);
         current.container.remove();
       },
