@@ -79,7 +79,7 @@ exports.getResume = (req, res, next) => {
   });
 
   res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', 'inline; filename="chi-wei\'s resume"');
+  res.setHeader('Content-Disposition', 'inline; filename="chi-wei\'s resume.pdf"');
 
   stream.pipe(res);
 };
